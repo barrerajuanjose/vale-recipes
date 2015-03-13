@@ -1,0 +1,20 @@
+<h1>Listing recetas</h1>
+ 
+<table>
+  <tr>
+    <th>Categoria</th>
+    <th>Titulo</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <%= link_to 'Nueva receta', new_recipe_path %>
+ 
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= recipe.category %></td>
+      <td><%= recipe.title %></td>
+      <td><%= link_to 'Show', recipe_path(recipe) %></td>
+      <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+    </tr>
+  <% end %>
+</table>
