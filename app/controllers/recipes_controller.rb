@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  http_basic_authenticate_with name: "valeria", password: "teamomucho", except: [:index, :show]
+
   def index
   	@recipes = Recipe.all
   end
@@ -37,9 +39,10 @@ class RecipesController < ApplicationController
  
   def destroy
     @recipe = Recipe.find(params[:id])
+
     @recipe.destroy
  
-    redirect_to recipe_path
+    redirect_to recipes_path
   end
  
   private
