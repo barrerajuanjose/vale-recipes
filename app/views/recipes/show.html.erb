@@ -1,20 +1,10 @@
+<h1>Receta <%= @recipe.title %></h1>
 <div class="container-fluid">
-	<h1>Nueva receta</h1>
+  <h5>Tipo:</h5>
+  <p><%= @recipe.category %></p>
 
-	<div class="row">
-	  <h5>Tipo:</h5>
-	  <%= @recipe.category %>
-	</div>
-
-	<div class="row">
-	  <h5>Titlo:</h5>
-	  <%= @recipe.title %>
-	</div>
-	 
-	<div class="row">
-	  <h5>Text:</h5>
-	  <%= @recipe.text %>
-	</div>
+  <h5>Text:</h5>
+  <p><%= simple_format @recipe.text %></p>
 
 	<div class="row">
 		<%= link_to 'Volver', recipes_path %>
