@@ -1,36 +1,33 @@
 <%= form_for @recipe do |f| %>
  
   <% if @recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@recipe.errors.count, "error") %> prohibited
-        this recipe from being saved:
-      </h2>
-      <ul>
-        <% @recipe.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <h4>
+      <%= pluralize(@recipe.errors.count, "error") %>:
+    </h4>
+    <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
   <% end %>
  
-  <p>
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </p>
+  <form>
+    <div class="form-group">
+      <%= f.label :category %>
+      <%= f.text_field :category, class:"form-control" %>
+    </div>
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text, size: "80x20" %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class:"form-control" %>
+    </div>
+   
+    <div class="form-group">
+      <%= f.label :text %>
+      <%= f.text_area :text, class:"form-control", rows:"5" %>
+    </div>
+   
+    <%= f.submit class:"btn btn-default" %>
+  </form>
+
 <% end %>

@@ -1,16 +1,22 @@
-<p>
-  <strong>Tipo:</strong>
-  <%= @recipe.category %>
-</p>
+<div class="container-fluid">
+	<h1>Nueva receta</h1>
 
-<p>
-  <strong>Titlo:</strong>
-  <%= @recipe.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @recipe.text %>
-</p>
+	<div class="row">
+	  <h5>Tipo:</h5>
+	  <%= @recipe.category %>
+	</div>
 
-<%= link_to 'Volver', recipes_path %>
+	<div class="row">
+	  <h5>Titlo:</h5>
+	  <%= @recipe.title %>
+	</div>
+	 
+	<div class="row">
+	  <h5>Text:</h5>
+	  <%= @recipe.text %>
+	</div>
+
+	<div class="row">
+		<%= link_to 'Volver', recipes_path %>
+	</div>
+</div>
