@@ -2,7 +2,13 @@ class RecipesController < ApplicationController
   http_basic_authenticate_with name: "valeria", password: "teamomucho", except: [:index, :show]
 
   def index
-  	@recipes = Recipe.all
+    @sortBy = params[:sort_by]
+
+    if !["category", "title"].include?(@sortBy)
+      @sortBy = "category"
+    end
+
+  	@recipes = Recipe.all.order(@sortBy + " ASC")
   end
  
   def show
