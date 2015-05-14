@@ -9,6 +9,11 @@
 		<p><%= simple_format @recipe.ingredients %></p>
 	</div>
 
+	<div class="form-group">
+      <h5>Porciones:</h5>
+	  <p><%= simple_format @recipe.serving %></p>
+    </div>
+
 	<div>
 		<h5>Preparación:</h5>
 		<p><%= simple_format @recipe.text %></p>
